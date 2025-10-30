@@ -18,7 +18,7 @@ function createContactElement(tag, text = "", idName = "", className = "", forVa
 export default function () {
     const contentDiv = document.getElementById("content");
 
-    const contactHead = createContactElement("h2", "Want to get in touch with us?");
+    const contactHead = createContactElement("h1", "Want to get in touch with us?");
     const contactText = createContactElement("p", "Use the form below to let us know of any of your protidic inquiries!");
     const contactForm = document.createElement("form");
 
