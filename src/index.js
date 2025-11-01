@@ -1,3 +1,4 @@
+import "./styles.css";
 import loadHome from "./home.js";
 import loadContact from "./contact.js";
 import loadMenu from "./menu.js";
@@ -11,7 +12,7 @@ const homeBtn = document.getElementById("homeBtn");
 const menuBtn = document.getElementById("menuBtn");
 const contactBtn = document.getElementById("contactBtn");
 
-document.addEventListener("DOMContentLoaded", loadHome());
+document.addEventListener("load", loadHome());
 
 homeBtn.addEventListener("click", () => {
     clearContent();

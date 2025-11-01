@@ -17,6 +17,8 @@ function createContactElement(tag, text = "", idName = "", className = "", forVa
 
 export default function () {
     const contentDiv = document.getElementById("content");
+    const tabDiv = document.createElement("div");
+    tabDiv.setAttribute("id", "contact-tab")
 
     const contactHead = createContactElement("h1", "Want to get in touch with us?");
     const contactText = createContactElement("p", "Use the form below to let us know of any of your protidic inquiries!");
@@ -48,5 +50,6 @@ export default function () {
 
     contactForm.append(nameDiv, addressDiv, phoneDiv, messageDiv, submitBtn);
 
-    contentDiv.append(contactHead, contactText, contactForm);
+    tabDiv.append(contactHead, contactText, contactForm);
+    contentDiv.appendChild(tabDiv);
 }

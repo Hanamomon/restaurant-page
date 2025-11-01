@@ -29,6 +29,8 @@ function createImage(url = "", className = "") {
 
 export default function () {
     const contentDiv = document.getElementById("content");
+    const tabDiv = document.createElement("div");
+    tabDiv.setAttribute("id", "menu-tab")
 
     const menuHead = createMenuElement("h1", "Menu");
 
@@ -43,8 +45,10 @@ export default function () {
         const mealItemName = createMenuElement("h3", item.itemName);
         const mealItemDesc = createMenuElement("p", item.itemDescription, "menu-item-desc");
         const mealItemPrice = createMenuElement("p", item.itemPrice, "menu-item-price");
-        const mealItemImage = createImage(item.itemImage, "", "menu-item-image");
-        mealItemDiv.append(mealItemName, mealItemImage, mealItemDesc, mealItemPrice);
+        const mealItemInfo = createMenuElement("div", "", "menu-item-info");
+        const mealItemImage = createImage(item.itemImage, "menu-item-image");
+        mealItemInfo.append(mealItemName, mealItemDesc, mealItemPrice)
+        mealItemDiv.append(mealItemInfo, mealItemImage);
         mealDiv.appendChild(mealItemDiv);
     })
 
@@ -60,8 +64,10 @@ export default function () {
         const dessertItemName = createMenuElement("h3", item.itemName);
         const dessertItemDesc = createMenuElement("p", item.itemDescription, "menu-item-desc");
         const dessertItemPrice = createMenuElement("p", item.itemPrice, "menu-item-price");
-        const dessertItemImage = createImage(item.itemImage, "", "menu-item-image");
-        dessertItemDiv.append(dessertItemName, dessertItemImage, dessertItemDesc, dessertItemPrice);
+        const dessertItemInfo = createMenuElement("div", "", "menu-item-info");
+        const dessertItemImage = createImage(item.itemImage, "menu-item-image");
+        dessertItemInfo.append(dessertItemName, dessertItemDesc, dessertItemPrice)
+        dessertItemDiv.append(dessertItemInfo, dessertItemImage);
         dessertDiv.appendChild(dessertItemDiv);
     })
 
@@ -77,10 +83,13 @@ export default function () {
         const shakeItemName = createMenuElement("h3", item.itemName);
         const shakeItemDesc = createMenuElement("p", item.itemDescription, "menu-item-desc");
         const shakeItemPrice = createMenuElement("p", item.itemPrice, "menu-item-price");
-        const shakeItemImage = createImage(item.itemImage, "", "menu-item-image");
-        shakeItemDiv.append(shakeItemName, shakeItemImage, shakeItemDesc, shakeItemPrice);
+        const shakeItemInfo = createMenuElement("div", "", "menu-item-info");
+        const shakeItemImage = createImage(item.itemImage, "menu-item-image");
+        shakeItemInfo.append(shakeItemName, shakeItemDesc, shakeItemPrice)
+        shakeItemDiv.append(shakeItemInfo, shakeItemImage);
         shakeDiv.appendChild(shakeItemDiv);
     })
 
-    contentDiv.append(menuHead, mealDiv, dessertDiv, shakeDiv);
+    tabDiv.append(menuHead, mealDiv, dessertDiv, shakeDiv);
+    contentDiv.appendChild(tabDiv);
 }

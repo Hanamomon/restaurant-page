@@ -1,5 +1,8 @@
 export default function () {
     const contentDiv = document.getElementById("content");
+    const tabDiv = document.createElement("div");
+    tabDiv.setAttribute("id", "home-tab")
+
     const headline = document.createElement("h1");
 
     const restauDiv = document.createElement("div");
@@ -32,5 +35,6 @@ export default function () {
     locationDiv.setAttribute("class", "info-container");
     locationDiv.append(locationHead, locationText);
 
-    contentDiv.append(headline, restauDiv, hoursDiv, locationDiv);
+    tabDiv.append(headline, restauDiv, hoursDiv, locationDiv);
+    contentDiv.appendChild(tabDiv);
 }

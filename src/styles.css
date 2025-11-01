@@ -1,0 +1,260 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Regular.woff2') format('woff2'),
+        url('fonts/Montserrat-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('fonts/Quicksand-Regular.woff2') format('woff2'),
+        url('fonts/Quicksand-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Normalize/Reset styles */
+
+:root {
+  line-height: 1.5;
+}
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+    padding: 0;
+}
+
+
+h1, h2, h3, label, button {
+    font-family: "Montserrat", system-ui;
+}
+
+p, input {
+    font-family: "Quicksand", system-ui;
+}
+
+/* Layout */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: rgb(202, 125, 145);
+    box-shadow: inset 0px -5px 5px 1px rgba(107, 78, 113, 0.75);
+}
+
+nav button {
+    background-color: rgb(212, 150, 167);
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px 3px rgb(107, 78, 113);
+}
+
+nav button:hover {
+    transform: translateY(5px);
+    border-radius: 10px;
+}
+
+nav button:focus {
+    box-shadow: 0px 0px 5px 3px rgb(90, 169, 230);
+    border-bottom: 0;
+}
+
+#content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(107, 78, 113);
+    background-image: url("./images/food-background.png");
+    background-size: 50%;
+    background-repeat: repeat;
+}
+
+#home-tab, #menu-tab, #contact-tab {
+    min-height: 100vh;
+    width: clamp(325px, 40vw, 1000px);
+    background-color: rgb(212, 150, 167);
+    padding: 1.5rem;
+}
+
+h1 {
+    align-self: center;
+    padding: 0.25rem 2rem;
+    background-color: rgb(202, 125, 145);
+    box-shadow: 0px 0px 5px 3px rgb(107, 78, 113);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Home styling */
+
+#home-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+#home-tab h2, #home-tab h2 ~ p {
+    text-align: center;
+}
+
+.info-container {
+    width: clamp(275px, 35vw, 750px);
+    padding: 1rem;
+    background-color: rgb(202, 125, 145);
+    box-shadow: 0px 0px 5px 3px rgb(107, 78, 113);
+    border-radius: 10px;
+}
+
+.info-container > p:first-child {
+    justify-self: center;
+    width: clamp(20ch, 80%, 40ch);
+}
+
+/* Menu styling */
+
+#menu-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.menu-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 5px;
+}
+
+.menu-section-container h2 {
+    place-self: center;
+    padding: 0.25rem 2rem;
+    background-color: rgb(202, 125, 145);
+    box-shadow: 0px 0px 5px 3px rgb(107, 78, 113);
+    border-radius: 10px;
+}
+
+.menu-item-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    min-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 3px rgb(107, 78, 113);
+    overflow: hidden;
+    background-color: rgb(202, 125, 145);
+}
+
+.menu-item-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.menu-item-info {
+    padding: 1rem 0;
+    display: grid;
+    grid-template-rows: minmax(25px, 1fr) minmax(fit-content, 2fr) minmax(50px, 1fr);
+}
+
+.menu-item-info h3 {
+    align-self: center;
+    padding-left: 2rem;
+}
+
+.menu-item-desc {
+    padding-left: 2rem;
+}
+
+.menu-item-price {
+    align-self: center;
+    justify-self: right;
+    font-weight: bold;
+}
+
+/* Contact styling */
+
+#contact-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#contact-tab p {
+    place-self: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-field {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    grid-template-rows: minmax(max-content, 50px);
+    gap: 1rem;
+}
+
+form input, textarea {
+    border-radius: 25px;
+    padding-left: 1rem;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px 3px rgba(107, 78, 113, 0.75);
+}
+
+form label {
+    align-self: center;
+}
+
+form input:focus, textarea:focus {
+    box-shadow: 0px 0px 5px 3px rgb(90, 169, 230);
+}
+
+textarea {
+    padding-top: 0.25rem;
+    resize: none;
+}
+
+form button {
+    background-color: rgb(202, 125, 145);
+    place-self: end;
+    border-radius: 10px;
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+    border: none;
+    box-shadow: 0px 0px 5px 3px rgba(107, 78, 113, 0.75);
+    outline: none;
+}
+
+form button:focus {
+    box-shadow: 0px 0px 5px 3px rgb(90, 169, 230);
+}
